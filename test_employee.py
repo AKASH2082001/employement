@@ -15,7 +15,7 @@ class testing_Employee(unittest.TestCase):
         self.connection.close()
 
     def test_verify_Employee(self):
-        result = self.connection.execute("select employee_name from Employee where employee_code="+self.code)
+        result = self.connection.execute("select employee_name from Employee where employee_name="+self.code)
         for i in result:
             fetchedemployeename= i[0]
             self.assertEqual(self.name,fetchedemployeename)
